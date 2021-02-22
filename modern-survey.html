@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    ::before,
+    ::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #949cdf;
+        margin-top: 3em;
+    }
+
+    .page-container {
+        max-width: 750px;
+        margin: 0 auto;
+        font-family: 'Mulish', sans-serif;
+
+    }
+
+    .header-container {
+        color: white;
+        text-align: center;
+    }
+
+    .header-container p {
+        font-style: italic;
+        margin-top: 0.5em;
+    }
+
+    .form-container {
+        color: white;
+        margin: 1.8em 0;
+        font-size: 1.2rem;
+        font-weight: 660;
+        border-radius: 0.2em;
+        background-color: #333456;
+    }
+
+
+    .input-field:first-child {
+        padding-top: 2em;
+    }
+
+    .input-field {
+        width: 85%;
+        margin: 1.5em auto;
+    }
+
+    .form-container label,
+    .form-container input {
+        display: block;
+    }
+
+    .form-container input {
+        width: 100%;
+        padding: 0.5em 0.8em;
+        font-size: inherit;
+        border-radius: 0.2em;
+        outline: none;
+        border: 0;
+    }
+
+    .form-container label {
+        margin: 0.5em 0;
+    }
+
+    ::placeholder {
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: inherit;
+        color: #495057;
+    }
+
+    .form-container select {
+        font-size: inherit;
+        color: grey;
+        padding: 0.3em;
+        width: 100%;
+        border-radius: 0.2em;
+    }
+
+    .input-field label span {
+        font-size: 1rem;
+        font-weight: 550;
+
+    }
+
+
+
+    .radio-field input,
+    .radio-field label {
+        display: inline;
+        width: auto;
+    }
+
+    .radio-field label {
+        margin-left: 0.3em;
+    }
+
+    .radio {
+        margin: 0.2em 0;
+    }
+
+    .radio input,
+    .checkbox input {
+        vertical-align: middle;
+        min-width: 1em;
+        min-height: 1em;
+    }
+
+    .radio label, .checkbox label {
+        vertical-align: middle;
+    }
+
+
+
+    .checkbox input,
+    .checkbox label {
+        display: inline;
+        width: auto;
+    }
+
+    .checkbox label {
+        margin-left: 0.3em;
+    }
+
+    .checkbox {
+        margin: 0.2em 0;
+    }
+
+    textarea {
+        max-width: 100%;
+        min-height: 8em;
+        min-width: 100%;
+        margin: 1em 0;
+        padding: 1em;
+        font-size: 1em;
+        font-weight: 100;
+    }
+
+    .submit-button {
+        max-width: 85%;
+        margin: 0 auto;
+    }
+
+
+    button {
+        width: 100%;
+        padding: 1em;
+        font-weight: inherit;
+        font-size: inherit;
+        color: inherit;
+        margin-bottom: 5em;
+        background-color: #37af65;
+        border: 0;
+        border-radius: 0.3em;
+    }
+
+    button:focus,
+    button:hover {
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="page-container">
+        <div class="header-container">
+            <h1>freeCodeCamp Survey Form</h1>
+            <p>Thank you for taking the time to help us improve the platform</p>
+        </div>
+        <div class="form-container">
+            <form action="submit" id="camp-survey">
+                <div class="input-field">
+                    <label for="#camp-survey">Name</label>
+                    <input type="text" placeholder="Enter your name" form="camp-survey" required>
+                </div>
+                <div class="input-field">
+                    <label for="#camp-survey">Email</label>
+                    <input type="text" placeholder="Enter your email">
+                </div>
+                <div class="input-field">
+                    <!--Need the (optional) text-->
+                    <label for="#camp-survey">Age <span>(optional)</span> </label>
+                    <input type="text" placeholder="Age">
+                </div>
+                <div class="input-field">
+                    <label for="#camp-survey">Which option best describes your current role?</label>
+                    <!--Need to add a placeholder-->
+                    <select name="current-role" id="#camp-survey">
+                        <option value="" selected disabled>Select current role</option>
+                        <option value="student">Student</option>
+                        <option value="part-time">Part time</option>
+                        <option value="full-time">Full time</option>
+                    </select>
+                </div>
+                <div class="input-field radio-field">
+                    <p>Would you reconmmend freeCodeCamp to a friend?</p>
+                    <div class="radio">
+                        <input type="radio" id="choice-1" form="#camp-survey" name="reconmend">
+                        <label for="choice-1" form="#camp-survey">Definitely</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="choice-2" form="#camp-survey" name="reconmend">
+                        <label for="choice-2" form="#camp-survey">Maybe</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="choice-3" form="#camp-survey" name="reconmend">
+                        <label for="choice-3" form="#camp-survey">Not Sure</label>
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="#camp-survey">What is your favorite feature of freeCodeCamp?</label>
+                    <!---Need to add a placeholder-->
+                    <select name="fav-feature" id="fav-feature-id" form="#camp-survey">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="challenges">Challenges</option>
+                        <option value="projects">Projects</option>
+                        <option value="community">Community</option>
+                        <option value="open-source">Open Source</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                    <p>What would you like to see improved?</p>
+                    <div class="checkbox">
+                        <input type="checkbox" value="front-end-projects" id="checkbox-1">
+                        <label form="#camp-survey" for="checkbox-1">Front-end projects</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" value="back-end-projects" id="checkbox-2">
+                        <label form="#camp-survey" for="checkbox-2">Back-end projects </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" value="open-source" id="checkbox-3">
+                        <label form="#camp-survey" for="checkbox-3">Open source</label>
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <p>Any comments or suggestions?</p>
+                    <textarea name="comment" id="" placeholder="Enter your comments here..."></textarea>
+                </div>
+                <div class="submit-button">
+                    <button type="submit" form="#camp-survey">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+    <!---Note: 1. the form is transparent thus the background image shows through
+    2. See if I can build a submittable form.-->
+
+
+</body>
+
+</html>
