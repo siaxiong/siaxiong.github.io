@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<style>
+	*,
+	::before,
+	::after {
+		padding: 0;
+		margin: 0;
+	}
+
+	.text-field-container {
+		margin: 1em;
+	}
+
+	.controls-container {
+		margin: 1em 0;
+		border: 1px solid #28527a;
+		max-width: 50%;
+		width: 100%;
+	}
+
+	.bigger-button,
+	.radio-button-container {
+		margin: 1em 0;
+		display: inline-block;
+
+	}
+
+	.radio-button-container {}
+
+	.radio-button {
+		margin: 0.5em 0;
+		display: inline-block;
+	}
+</style>
+
+<body>
+	<div class="text-field-container">
+		<div class="text-field">
+			<label for="">Texts</label>
+			<div class="text-field">
+				<textarea name="" id="text-field" cols="30" rows="4"></textarea>
+			</div>
+		</div>
+		<div class="controls-container">
+			<p>Facify</p>
+			<div class="bigger-button">
+				<button id="bigger-button">Bigger!</button>
+			</div>
+			<div class="moo-button">
+				<button id="moo-button">Moo</button>
+			</div>
+			<div class="radio-button-container">
+				<div class="radio-button">
+					<input type="radio" id="fancyShmancy" name="font-style">
+					<label for="fancyShmancy">FancyShmancy</label>
+				</div>
+				<div class="radio-button">
+					<input type="radio" id="boringBetty" name="font-style">
+					<label for="boringBetty">BoringBettey</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		let biggerButton;
+		let textField;
+		let fancyButton;
+		let boringButton;
+		let mooButton;
+
+		textField = document.querySelector("#text-field");
+		fancyButton = document.querySelector('#fancyShmancy');
+		boringButton = document.querySelector('#boringBetty');
+		mooButton = document.querySelector('#moo-button');
+
+
+		biggerButton = document.querySelector('#bigger-button');
+		biggerButton.addEventListener('click', () => {
+			alert("Hello, world!");
+
+			textField.style.fontSize = '1.5em';
+
+		})
+
+		fancyButton.addEventListener('click', () => {
+			textField.style.fontStyle = 'italic';
+			textField.style.fontWeight = 'bold';
+			textField.style.textDecoration = 'underline';
+			textField.style.color = 'blue';
+		})
+
+		boringButton.addEventListener('click', () => {
+			textField.style.fontStyle = 'normal';
+			textField.style.fontWeight = 'normal';
+			textField.style.textDecoration = 'none';
+			textField.style.color = 'black';
+			textField.style.textTransform = 'lowercase';
+
+
+		})
+
+		mooButton.addEventListener('click', () => {
+			textField.style.textTransform = 'uppercase';
+
+			let factor = textField.value.split(".");
+			for (var i = 0; i < factor.length; i++) {
+				factor[i] = factor[i] + "Moo";
+			}
+			textField.value = factor.join(".");
+		})
+
+
+
+	</script>
+
+</body>
+
+</html>
