@@ -1,0 +1,118 @@
+.our-team {
+    text-align: center;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+
+
+.our-team h3 {
+    color: grey;
+    font-size: 1em;
+}
+.our-team > p{
+    color: black;
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.team {
+  position: relative;
+}
+
+.carousel-team .img-name {
+    font-size: 1em;
+    padding: 1em;
+    border: 1px solid #e1e3e7 ;
+    border-radius: 1em;
+    background-color: white;
+    position: absolute;
+    z-index: 101;
+    left: 1.2em;
+    bottom: -2em;
+    width: 90%;
+    box-shadow: 0px 10px 11px -2px rgba(0,0,0,0.10);
+}
+
+.img-name > h3 {
+  color: black;
+  margin: 0.5em 0;
+
+}
+
+.img-name > p {
+  color: grey;
+}
+
+.our-team p:last-of-type > span {
+    color: #377dff;
+}
+
+.team {
+  display: none;
+  margin-top: 1em;
+}
+
+.team > img {
+  width: 100%;
+  border-radius: 1em;
+}
+
+
+.dots {
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 0.3em;
+  background-color: #377dff;
+}
+
+.carousel-dots {
+  margin-top: 4em;
+}
+
+.carousel-dots > p {
+  margin: 1em auto;
+  border: 1px solid #e7eaf3;
+  border-radius: 2em;
+  padding: 1em 2em;
+  max-width: 500px;
+  width: 70%;
+}
+
+.currentDot {
+  background-color: grey;
+}
+
+@media only screen and (min-width: 570px) {
+    .carousel-team {
+        display: flex;
+        justify-content: center;
+    }
+
+    .team:nth-child(2) {
+        display: block !important;
+    }
+
+    .team {
+      margin: 0 0.5em;
+    }
+    .team > img {
+        width: 250px;
+    }
+
+} 
+
+
+@media only screen and (min-width: 1001px){
+  .team:nth-child(3){
+    display: block !important;
+  }
+}
+
+@media only screen and (min-width: 1200px){ 
+  .team:nth-child(4){
+    display: block !important;
+  }
+}

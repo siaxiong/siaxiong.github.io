@@ -1,0 +1,187 @@
+.footer-container {
+  background-color: #2a3a62;
+  padding: 1em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-menu {
+  max-width: 500px;
+  width: 100%;
+}
+
+.footer-top-half {
+  margin-top: 1em;
+}
+
+[class*="ft-menu-row"] {
+  display: flex;
+  margin: 1em 0;
+}
+
+[class*="ft-menu-row"] > * {
+  flex: 1;
+}
+
+[class*="ft-menu-row"] li:first-child > a {
+  font-size: 1.2em;
+  color: white;
+}
+
+.company > li:nth-child(3) > a > span {
+  color: white;
+  margin-left: 1em;
+  padding: 0.4em;
+  border-radius: 0.5em;
+  font-size: 0.7em;
+  background-color: #377dff;
+  display: inline-block;
+}
+
+.footer-container > .contact {
+  margin: 1em 0;
+}
+
+.contact-phone-number {
+  display: flex;
+}
+
+.contact-address {
+  display: flex;
+}
+
+.contact > * + * {
+  margin-top: 0.8em;
+}
+
+.fa-location-arrow {
+  margin-right: 0.5em;
+}
+
+.fa-phone {
+  margin-right: 0.5em;
+}
+
+
+.resources .fa {
+  margin-right: 0.5em;
+}
+
+.footer-container  hr {
+  color: rgba(255, 255, 255, 0.7);
+  height: 1px;
+  padding: 0;
+  opacity: 0.2;
+}
+
+[class*="ft-privacy-row"] {
+  margin: 2em 0;
+  max-width: 500px;
+}
+
+.privacy p {
+  display: inline-block;
+  margin-right: 0.5em;
+  line-height: 2em;
+}
+
+.privacy p:nth-child(even) {
+  opacity: 0.2;
+}
+
+.social-media > ul {
+  display: flex;
+}
+
+.social-media li {
+  padding: 0.3em;
+  margin: 0 0.5em;
+  border-radius: 0.3em;
+  background-color: rgba(247,250,255,.1);
+}
+
+.social-media .fa {
+  color: white;
+  width: 1.5em;
+}
+
+.social-media a {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.fine-texts {
+  font-size: 0.8em;
+  margin: 3em 0 2em;
+  color: white;
+  opacity: 0.4;
+}
+
+.fine-texts > p:first-child {
+  margin-bottom: 1em;
+}
+
+.fine-texts > p {
+  line-height: 1.5em;
+}
+
+
+
+@media only screen and (min-width: 750px) {
+
+  .footer-container > {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .footer-menu {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+
+  }
+
+  [class*="ft-menu-row"] {
+    flex: 1;
+  
+  }
+
+  [class*="ft-menu-row"] > * {
+    flex: 1;
+  }
+
+}
+
+@media only screen and (min-width: 1001px){
+
+  .footer-container > * {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .footer-top-half {
+    display: flex;
+  }
+
+  .ft-privacy-top-half{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contact {
+    margin-top: 2.5em;
+    margin-right: 1.5em;
+  }
+
+  .contact > * + * {
+    margin-top: 1.5em;
+  }
+
+  .ft-privacy-row3 {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+}
