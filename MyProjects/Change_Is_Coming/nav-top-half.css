@@ -1,0 +1,71 @@
+@media only screen and (min-width: 930px) {
+
+  .carousel-container {
+    height: 100vh;
+  }
+
+
+    .nav-top-half {
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .hamburger-menu {
+        display: none;
+      }
+
+      .nav-top-half > nav {
+          flex: 1;
+
+      }
+      .nav-top-half > * {
+          margin: 1em auto;
+      }
+
+      .carousel-container nav > * {
+          margin: initial;
+      }
+
+
+    
+      .menu-list {
+        width: fit-content;
+        height: auto;
+        overflow: auto;
+        transition: auto;
+        position: static;
+        transform: none;
+        background-color: inherit;
+        flex: 2;
+      }
+
+    
+      .menu-list ul {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+  
+    
+      .buy-button {
+        display: block;
+        flex: 1;
+        text-align: right;
+      }
+    
+    
+    
+      .buy-button > button {
+        font-size: 1.2em;
+        padding: 0.6em 1em;
+        border-radius: 0.3em;
+        background-color: white;
+        border: 0px;
+      }
+
+
+
+
+
+}

@@ -37,7 +37,7 @@
     }
 
     .profile-description {
-        padding-right: 3em;
+        margin: 5em 3em 0;
     }
 
     .profile-description > h3 {

@@ -352,53 +352,38 @@ input::placeholder {
 
 @media only screen and (min-width: 800px) {
 
+  .carousel-container {
+    height: 100vh;
+  }
+
   .carousel-container > * {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
-  .nav-top-half {
-    display: flex;
+  .carousel-message {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 
-  .hamburger-menu {
-    display: none;
-  }
-
-  .menu-list {
-    width: fit-content;
-    height: auto;
-    overflow: auto;
-    transition: auto;
-    position: static;
-    transform: none;
-    border-radius: none;
-    background-color: inherit;
-  }
-
-  .menu-list ul {
-    display: flex;
-    margin: 1em auto;
+  .carousel-slides {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    transform: translate(-50%, 1em);
   }
 
 
-  .buy-button {
-    display: block;
-    margin: 1em 1em 1em 2em;
-  }
-
-
-
-  .buy-button > button {
-    font-size: 1.2em;
-    padding: 0.6em 1em;
-    border-radius: 0.5em;
-    background-color: white;
-  }
 
   .sign-up {
     display: flex;
-    max-width: 800px;
+    max-width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }
 
   .input-field {
@@ -411,9 +396,6 @@ input::placeholder {
 
   }
 
-  .carousel-slides {
-    max-width: auto;
-  }
 }
 
 
