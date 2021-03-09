@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,33 +7,44 @@
     <link rel="stylesheet" href="drag-drop-style.css">
     <title>Drag and Drop</title>
 </head>
-
 <body>
 
     <div class="example-parent">
         <div class="example-origin">
-            <div id="draggable-1" class="example-draggable" draggable="true" ondragstart="onDragStart(event)">draggable
-            </div>
-            <div id="draggable-2" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
-                thing 2
-            </div>
-            <div id="draggable-3" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
-                thing 3
-            </div>
-            <div id="draggable-4" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
-                thing 4
-            </div>
+            <div id="draggable-1" class="example-draggable" draggable="true" ondragstart="onDragStart(event)">draggable</div>
         </div>
         <div class="example-dropzone" ondragover="onDragOver(event)" ondrop="onDrop(event)">dropzone</div>
-
     </div>
 
-
+    <div
+      id="draggable-2"
+      class="example-draggable"
+      draggable="true"
+      ondragstart="onDragStart(event);"
+    >
+      thing 2
+    </div>
+    <div
+      id="draggable-3"
+      class="example-draggable"
+      draggable="true"
+      ondragstart="onDragStart(event);"
+    >
+      thing 3
+    </div>
+    <div
+      id="draggable-4"
+      class="example-draggable"
+      draggable="true"
+      ondragstart="onDragStart(event);"
+    >
+      thing 4
+    </div>
 
     <script>
         //this event handler will be attached to the draggable element
         //and fire when a dragstart event occurs
-        function onDragStart(event) {
+        function onDragStart(event){
             event
                 .dataTransfer
                 .setData('text/plain', event.target.id);
@@ -45,11 +55,11 @@
                 .backgroundColor = 'yellow';
         }
 
-        function onDragOver(event) {
+        function onDragOver(event){
             event.preventDefault();
         }
 
-        function onDrop(event) {
+        function onDrop(event){
             const id = event
                 .dataTransfer
                 .getData('text');
@@ -66,7 +76,6 @@
 
     </script>
 
-
+    
 </body>
-
 </html>

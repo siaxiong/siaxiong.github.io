@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="drag-drop-style.css">
+    <title>Drag and Drop</title>
+</head>
+<body>
+
+    <div class="example-parent">
+        <div class="example-origin">
+            <div id="draggable-1" class="example-draggable" draggable="true">draggable</div>
+        </div>
+        <div class="example-dropzone">dropzone</div>
+    </div>
+
+    <script>
+        function onDragStart(event){
+            event
+                .dataTransfer
+                .setData('text/plain', event.target.id);
+        }
+
+    </script>
+
+    
+</body>
+</html>
