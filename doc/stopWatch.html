@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>StopWatch</title>
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    .container {
+        border: 1px solid black;
+        height: 100vh;
+    }
+
+    .stopwatch {
+        margin: 0 auto;
+        max-width: 600px;
+        width: 100%;
+
+        color: #f8f9fa;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+
+        font-size: 1.5rem;
+        border-radius: 0.2em;
+
+    }
+
+    .stopwatch--orange {
+        background-color: #fca311;
+
+    }
+
+    .stopwatch__message,
+    .stopwatch__time,
+    .stopwatch__buttons {
+        padding: 1em 1.5em;
+        /* margin: 1em 0; */
+        /* border: 1px solid yellow; */
+    }
+
+    .stopwatch__message {
+        overflow-wrap: break-word;
+        letter-spacing: 0.2em;
+        /* font-size: 1.5rem; */
+    }
+
+    .stopwatch__message>* {
+        margin: 0.5em 0;
+
+    }
+
+    .stopwatch__buttons {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+
+
+    .stopwatch__time {
+        overflow-wrap: break-word;
+        font-size: 2rem;
+    }
+
+    .stopwatch__buttons>* {
+        border: 1px solid #fff;
+        border-radius: 0.2em;
+        padding: 0.5em 1.8em;
+        font-size: inherit;
+        color: inherit;
+        background-color: inherit;
+
+    }
+
+    .stopwatch--position {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    @media only screen and (max-width: 700px) {
+        .stopwatch {
+            max-width: 90%;
+        }
+    }
+
+    @media only screen and (max-width:500px) {
+        .stopwatch__buttons>* {
+            flex: 1;
+        }
+    }
+</style>
+
+<body>
+
+    <!-----USE BEM METHODOLOGY-->
+    <div class="container">
+
+        <div class="stopwatch stopwatch--orange stopwatch--medium stopwatch--position">
+            <div class="stopwatch__message">
+                <h3>STOPWATCH</h3>
+                <p>VANILLA JAVASCRIPT STOPWATCH</p>
+            </div>
+
+            <div id="stopwatch__time" class="stopwatch__time">
+                00:00:00
+
+            </div>
+
+            <div class="stopwatch__buttons">
+                <button id="stopwatch__button--start" class="stopwatch__button">
+                    Start
+                </button>
+                <button id="stopwatch__button--stop" class="stopwatch__button">
+                    Stop
+                </button>
+                <button id="stopwatch__button--reset"class="stopwatch__button">
+                    Reset
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let startButton = document.getElementById('stopwatch__button--start');
+        let stopButton = document.getElementById('stopwatch__button--stop');
+        let resetButton = document.getElementById('stopwatch__button--reset');
+
+        let startTime;
+        let elapsedTime = 0;
+        let timerInterval;
+
+        startButton.addEventListener("click", start);
+        stopButton.addEventListener("click", stop);
+        resetButton.addEventListener("click", reset);
+
+    
+
+        function start(){
+            startTime = Date.now() - elapsedTime;
+            timerInterval = setInterval(function printTime(){
+                elapsedTime = Date.now() - startTime;
+                print(timeToString(elapsedTime));
+            }, 10)
+        }
+
+        function stop(){
+            clearInterval(timerInterval);
+        }
+
+        function reset(){
+            clearInterval(timerInterval);
+            print("00:00:00");
+            elapsedTime = 0;
+        }
+
+        function print(txt){
+            document.getElementById("stopwatch__time").innerHTML = txt;
+        }
+
+        function timeToString(time) {
+
+            let diffInHrs = time / 3600000;
+            let hh = Math.floor(diffInHrs)
+
+            let diffInMin = (diffInHrs - hh) * 60;
+            let mm = Math.floor(diffInMin)
+
+            let diffInSec = (diffInMin - mm) * 60;
+            let ss = Math.floor(diffInSec);
+
+            let DiffInMs = (diffInSec - ss) * 100;
+            let ms = Math.floor(DiffInMs);
+
+
+            let formattedMM = mm.toString().padStart(2, "0");
+            let formattedSS = ss.toString().padStart(2, "0");
+            let formattedMS = ms.toString().padStart(2, "0");
+
+
+            return `${formattedMM}:${formattedSS}:${formattedMS}`;
+        }
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -14,7 +14,7 @@
     <div class="example-parent">
         <div class="example-origin">
             <div id="draggable-1" class="example-draggable" draggable="true" ondragstart="onDragStart(event)">
-                thing 1
+                draggable
             </div>
             <div id="draggable-2" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
                 thing 2
@@ -46,8 +46,8 @@
                 .backgroundColor = 'yellow';
         }
 
-        //some default DOM elements like DIV does not accept
-        //dropping. Thus, we have to prevent its default behavoir
+        //will be attached to the dropzone element and fire when a drop
+        //event occurs
         function onDragOver(event) {
             event.preventDefault();
         }
@@ -63,8 +63,7 @@
             //get the dropzone element id
             const dropzone = event.target;
             //append the draggable element to the dropzone
-            let newClone = draggableElement.cloneNode(true)
-            dropzone.appendChild(newClone);
+            dropzone.appendChild(draggableElement);
 
             //reset the dataTransfer object
             event

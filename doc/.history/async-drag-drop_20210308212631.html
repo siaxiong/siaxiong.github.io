@@ -63,8 +63,7 @@
             //get the dropzone element id
             const dropzone = event.target;
             //append the draggable element to the dropzone
-            let newClone = draggableElement.cloneNode(true)
-            dropzone.appendChild(newClone);
+            dropzone.cloneNode(draggableElement);
 
             //reset the dataTransfer object
             event
