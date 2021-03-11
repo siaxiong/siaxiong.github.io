@@ -42,20 +42,21 @@
 
     }
 
-    .stopwatch__title,
+    .stopwatch__message,
+    .stopwatch__time,
     .stopwatch__buttons {
-        padding: 1.5em;
+        padding: 1em 1.5em;
         /* margin: 1em 0; */
         /* border: 1px solid yellow; */
     }
 
-    .stopwatch__title {
+    .stopwatch__message {
         overflow-wrap: break-word;
         letter-spacing: 0.2em;
         /* font-size: 1.5rem; */
     }
 
-    .stopwatch__title>* + *{
+    .stopwatch__message>* {
         margin: 0.5em 0;
 
     }
@@ -71,7 +72,6 @@
     .stopwatch__time {
         overflow-wrap: break-word;
         font-size: 2rem;
-        padding: 0.2em;
     }
 
     .stopwatch__buttons>* {
@@ -111,7 +111,7 @@
     <div class="container">
 
         <div class="stopwatch stopwatch--orange stopwatch--medium stopwatch--position">
-            <div class="stopwatch__title">
+            <div class="stopwatch__message">
                 <h3>STOPWATCH</h3>
                 <p>VANILLA JAVASCRIPT STOPWATCH</p>
             </div>
