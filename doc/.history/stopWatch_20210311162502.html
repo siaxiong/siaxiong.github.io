@@ -49,9 +49,10 @@
         /* border: 1px solid yellow; */
     }
 
-    .stopwatch__title, .stopwatch__button, .stopwatch__time {
+    .stopwatch__title {
         overflow-wrap: break-word;
         letter-spacing: 0.2em;
+        /* font-size: 1.5rem; */
     }
 
     .stopwatch__title>* + *{
@@ -72,6 +73,7 @@
 
 
     .stopwatch__time {
+        overflow-wrap: break-word;
         font-size: 2rem;
         padding: 0.2em;
     }
@@ -79,8 +81,7 @@
     .stopwatch__buttons>* {
         border: 1px solid #fff;
         border-radius: 0.2em;
-        padding: 0.5em 1.3em;
-        font-family: inherit;
+        padding: 0.5em 1.8em;
         font-size: inherit;
         color: inherit;
         background-color: inherit;
@@ -96,6 +97,7 @@
     }
 
     .stopwatch--medium {
+        font-size: 10rem;
     }
 
     @media only screen and (max-width: 700px) {
